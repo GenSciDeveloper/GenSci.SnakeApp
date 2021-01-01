@@ -4,9 +4,29 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GenSci.SnakeApp"
+        KeyDown="Window_KeyDown"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Snake" Height="900" Width="1350">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="900"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Name="PlayGround" Grid.Column="0" Background="Gray" Width="800" Height="800" HorizontalAlignment="Left" Margin="50" ShowGridLines="True">
+        </Grid>
 
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Bold">
+                <Run>Текущий счет: </Run>
+                <Run Text="{Binding Score}"></Run>
+            </TextBlock>
+            <Button Grid.Row="1" Name="BeginButton" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Новая игра" Click="BeginButton_Click"></Button>
+        </Grid>
     </Grid>
 </Window>
